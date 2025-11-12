@@ -1,0 +1,39 @@
+{
+  "background_color": "#ffffff",
+  "description": "Explore a wide range of products including fashion, electronics, accessories, and more at The Demand Hub Official. Shop in Bangla and English languages with ease.",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "The Demand Hub",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "The Demand Hub",
+  "start_url": "/",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "https://storage.googleapis.com/mixo-files/uploads/default-social-theDemandHub-1762958058380.png",
+      "type": "image/png",
+      "sizes": "1200x675",
+      "isSquare": false,
+      "isPng": true,
+      "isWebp": false,
+      "isJpg": false,
+      "width": 1200,
+      "is512x512": false,
+      "is256x256": false,
+      "is192x192": false
+    },
+    {
+      "src": "https://www.mixo.io/favicon.ico",
+      "type": "image/x-icon",
+      "isSquare": false,
+      "isPng": false,
+      "isWebp": false,
+      "isJpg": false,
+      "width": 0,
+      "is512x512": false,
+      "is256x256": false,
+      "is192x192": false
+    }
+  ]
+}
