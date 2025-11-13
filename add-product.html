@@ -1,106 +1,61 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Add Product | The Demand Hub</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f9f9f9;
-      padding: 40px;
+      font-family: "Poppins", sans-serif;
+      background: #f4f4f4;
+      color: #333;
       text-align: center;
+      padding: 30px;
     }
-    h1 { color: #007bff; }
-
+    h1 {
+      color: #007bff;
+    }
     form {
-      background: #fff;
+      background: white;
+      max-width: 400px;
+      margin: 0 auto;
       padding: 20px;
       border-radius: 10px;
-      max-width: 400px;
-      margin: auto;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      text-align: left;
     }
-
-    input, textarea, button {
+    input, textarea {
       width: 100%;
       padding: 10px;
-      margin-top: 10px;
-      border-radius: 6px;
+      margin: 10px 0;
       border: 1px solid #ccc;
-      font-size: 16px;
+      border-radius: 5px;
     }
-
     button {
       background: #007bff;
       color: white;
       border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
       cursor: pointer;
     }
-
     button:hover {
       background: #0056b3;
-    }
-
-    a {
-      text-decoration: none;
-      color: #007bff;
     }
   </style>
 </head>
 <body>
-  <h1>🛍️ Add New Product</h1>
-  
-  <form id="productForm">
-    <input type="text" id="name" placeholder="প্রোডাক্টের নাম লিখুন" required><br>
-    <textarea id="desc" placeholder="প্রোডাক্টের বিবরণ লিখুন" required></textarea><br>
-    <input type="number" id="price" placeholder="মূল্য লিখুন (৳)" required><br>
-    <input type="file" id="image" accept="image/*"><br>
-    <button type="submit">Save Product</button>
+  <h1>🛒 নতুন প্রোডাক্ট যুক্ত করো</h1>
+
+  <form>
+    <input type="text" placeholder="প্রোডাক্টের নাম" required />
+    <textarea placeholder="প্রোডাক্টের বিবরণ" required></textarea>
+    <input type="number" placeholder="দাম (৳)" required />
+    <input type="url" placeholder="প্রোডাক্ট ইমেজ লিংক" required />
+    <button type="submit">প্রোডাক্ট যুক্ত করো</button>
   </form>
 
-  <p><a href="index.html">⬅️ হোম পেজে ফিরে যান</a></p>
-
-  <script>
-    document.getElementById("productForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-
-      const name = document.getElementById("name").value;
-      const desc = document.getElementById("desc").value;
-      const price = document.getElementById("price").value;
-      const imageFile = document.getElementById("image").files[0];
-
-      if (!name || !desc || !price) {
-        alert("সব ঘর পূরণ কর ভাই 😅");
-        return;
-      }
-
-      const reader = new FileReader();
-      reader.onload = function(event) {
-        const imageData = event.target.result;
-
-        const product = { name, desc, price, image: imageData };
-
-        const products = JSON.parse(localStorage.getItem("products")) || [];
-        products.push(product);
-        localStorage.setItem("products", JSON.stringify(products));
-
-        alert("✅ প্রোডাক্ট যোগ করা হয়েছে!");
-        document.getElementById("productForm").reset();
-      };
-
-      if (imageFile) {
-        reader.readAsDataURL(imageFile);
-      } else {
-        const product = { name, desc, price, image: "" };
-        const products = JSON.parse(localStorage.getItem("products")) || [];
-        products.push(product);
-        localStorage.setItem("products", JSON.stringify(products));
-        alert("✅ প্রোডাক্ট যোগ করা হয়েছে!");
-        document.getElementById("productForm").reset();
-      }
-    });
-  </script>
+  <p style="margin-top: 20px;">
+    <a href="index.html" style="color:#007bff; text-decoration:none;">⬅ হোমে ফিরে যাও</a>
+  </p>
 </body>
 </html>
