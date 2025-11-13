@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Add Product | The Demand Hub</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: #f4f7fc;
+      padding: 20px;
+    }
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      color: #555;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 15px;
+      background: #0066ff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0051cc;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>🛍️ নতুন প্রোডাক্ট অ্যাড করুন</h2>
+    <form>
+      <label>Product Name / প্রোডাক্ট নাম:</label>
+      <input type="text" placeholder="যেমন: T-Shirt, Watch ইত্যাদি" />
+
+      <label>Price / দাম:</label>
+      <input type="number" placeholder="যেমন: 550" />
+
+      <label>Product Description / বর্ণনা:</label>
+      <textarea placeholder="প্রোডাক্ট সম্পর্কে সংক্ষিপ্ত তথ্য দিন"></textarea>
+
+      <label>Image URL / প্রোডাক্টের ছবি লিংক:</label>
+      <input type="text" placeholder="https://example.com/image.jpg" />
+
+      <button type="submit">Add Product ✅</button>
+    </form>
+  </div>
+</body>
+</html>
