@@ -1,20 +1,53 @@
-<section id="contact" style="text-align:center; color:white;">
-  <h2>Contact Us</h2>
-  <p>Have questions or want to work with us? Send a message below 👇</p>
-
-  <form action="https://formsubmit.co/marufahmedxxx000@gmail.com" method="POST" style="display:inline-block; text-align:left; background-color:#111; padding:20px; border-radius:10px; width:90%; max-width:400px;">
-    
-    <input type="hidden" name="_captcha" value="false">
-    
-    <label>Your Name</label><br>
-    <input type="text" name="name" placeholder="Enter your name" required style="width:100%; margin-bottom:10px;"><br>
-
-    <label>Your Email</label><br>
-    <input type="email" name="email" placeholder="Enter your email" required style="width:100%; margin-bottom:10px;"><br>
-
-    <label>Your Message</label><br>
-    <textarea name="message" placeholder="Write your message here..." required style="width:100%; margin-bottom:10px;"></textarea><br>
-
-    <button type="submit" style="background-color:#00bfff; border:none; padding:10px 20px; border-radius:5px; cursor:pointer;">Send Message</button>
-  </form>
-</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Form - The Demand Hub</title>
+  <style>
+    body {
+      background: #f2f2f2;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .contact-box {
+      background: #111;
+      color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      width: 300px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+    input, textarea {
+      width: 100%;
+      margin: 10px 0;
+      padding: 8px;
+      border: none;
+      border-radius: 5px;
+    }
+    button {
+      background: #00bfff;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      color: white;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="contact-box">
+    <h3>Contact Us</h3>
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</body>
+</html>
