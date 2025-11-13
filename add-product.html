@@ -6,68 +6,53 @@
   <title>Add Product | The Demand Hub</title>
   <style>
     body {
-      font-family: "Poppins", sans-serif;
-      background: #f4f7fc;
-      padding: 20px;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #f9f9f9;
+      padding: 40px;
     }
-    .container {
+    h1 {
+      color: #007bff;
+    }
+    form {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
       max-width: 400px;
-      margin: 0 auto;
-      background: white;
-      padding: 25px;
-      border-radius: 15px;
+      margin: auto;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-    h2 {
-      text-align: center;
-      color: #333;
-    }
-    label {
-      display: block;
-      margin-top: 10px;
-      color: #555;
-    }
-    input, textarea {
-      width: 100%;
+    input, textarea, button {
+      width: 90%;
       padding: 10px;
-      margin-top: 5px;
+      margin: 8px 0;
+      border-radius: 6px;
       border: 1px solid #ccc;
-      border-radius: 8px;
     }
     button {
-      width: 100%;
-      padding: 10px;
-      margin-top: 15px;
-      background: #0066ff;
-      color: white;
+      background: #007bff;
+      color: #fff;
       border: none;
-      border-radius: 8px;
-      font-size: 16px;
       cursor: pointer;
     }
     button:hover {
-      background: #0051cc;
+      background: #0056b3;
+    }
+    a {
+      text-decoration: none;
+      color: #007bff;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h2>🛍️ নতুন প্রোডাক্ট অ্যাড করুন</h2>
-    <form>
-      <label>Product Name / প্রোডাক্ট নাম:</label>
-      <input type="text" placeholder="যেমন: T-Shirt, Watch ইত্যাদি" />
-
-      <label>Price / দাম:</label>
-      <input type="number" placeholder="যেমন: 550" />
-
-      <label>Product Description / বর্ণনা:</label>
-      <textarea placeholder="প্রোডাক্ট সম্পর্কে সংক্ষিপ্ত তথ্য দিন"></textarea>
-
-      <label>Image URL / প্রোডাক্টের ছবি লিংক:</label>
-      <input type="text" placeholder="https://example.com/image.jpg" />
-
-      <button type="submit">Add Product ✅</button>
-    </form>
-  </div>
+  <h1>🛒 Add New Product</h1>
+  <form>
+    <input type="text" placeholder="প্রোডাক্টের নাম লিখুন" required><br>
+    <textarea placeholder="প্রোডাক্টের বিস্তারিত লিখুন" required></textarea><br>
+    <input type="number" placeholder="মূল্য লিখুন (৳)" required><br>
+    <input type="file" accept="image/*"><br>
+    <button type="submit">Save Product</button>
+  </form>
+  <p><a href="index.html">⬅️ হোম পেজে ফিরে যান</a></p>
 </body>
 </html>
