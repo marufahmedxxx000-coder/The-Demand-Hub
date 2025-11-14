@@ -1,13 +1,81 @@
-
-<!DOCTYPE html>
-<html lang="bn">
+<!DOCTYPE html><html lang="bn">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Home Page</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>আমার দোকান - হোম</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f5f5;
+    }
+    header {
+      background: #222;
+      color: #fff;
+      padding: 15px;
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+    }
+    .menu {
+      display: flex;
+      justify-content: space-around;
+      background: #fff;
+      padding: 10px 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .menu a {
+      text-decoration: none;
+      color: #222;
+      font-size: 18px;
+      font-weight: 600;
+    }
+    .banner {
+      background: #ddd;
+      padding: 40px;
+      text-align: center;
+      font-size: 26px;
+      font-weight: bold;
+    }
+    .section-title {
+      margin: 20px;
+      font-size: 22px;
+      font-weight: bold;
+    }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      padding: 10px;
+    }
+    .card {
+      background: #fff;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
-<h1>🏠 Home Page</h1>
-<p>এখানে তোমার হোম প্রোডাক্টগুলো যোগ করতে পারবে।</p>
+  <header>আমার অনলাইন দোকান</header>  <nav class="menu">
+    <a href="#">হোম</a>
+    <a href="#">সব ক্যাটাগরি</a>
+    <a href="#">অর্ডার</a>
+    <a href="#">ড্যাশবোর্ড</a>
+  </nav>  <div class="banner">স্বাগতম! আপনার সকল প্রয়োজনীয় আইটেম এক জায়গায়</div>  <div class="section-title">Featured Products</div>  <div class="products">
+    <div class="card">জামা কাপড়</div>
+    <div class="card">হোম ডেকোর</div>
+    <div class="card">গ্যাজেট</div>
+    <div class="card">অন্যান্য আইটেম</div>
+  </div>  <div class="footer">© 2025 - আমার দোকান</div>
 </body>
 </html>
