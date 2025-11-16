@@ -1,65 +1,263 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Demand Hub | Easy eCommerce</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>The Demand Hub — Home</title>
   <style>
-    body {
-      margin: 0;
-      font-family: "Poppins", sans-serif;
-      background: #f9fafc;
-      color: #222;
-      text-align: center;
-    }
-    header {
-      background: #ffffff;
-      padding: 25px 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    header h1 {
-      font-size: 28px;
-      color: #333;
-      margin: 0;
-    }
-    header p {
-      color: #555;
-      margin-top: 6px;
-    }
-    .container {
-      margin-top: 60px;
-    }
-    .btn {
-      display: inline-block;
-      background: #007bff;
-      color: white;
-      padding: 12px 22px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-    .btn:hover {
-      background: #0056b3;
-    }
-    footer {
-      margin-top: 100px;
-      padding: 15px;
-      background: #eee;
-      font-size: 14px;
-      color: #444;
-    }
+    :root{--blue:#1287f5;--dark:#222;--card:#fff;--muted:#666}
+    body{font-family:Inter,system-ui,Arial; margin:0; background:#f6f7fb; color:var(--dark); -webkit-font-smoothing:antialiased}
+    header{background:#fff;padding:18px 16px;box-shadow:0 2px 6px rgba(10,10,10,0.06);display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:20}
+    header img.logo{width:46px;height:46px;border-radius:8px;object-fit:cover}
+    header h1{font-size:18px;margin:0}
+    header p{margin:0;font-size:12px;color:var(--muted)}
+    .container{max-width:960px;margin:20px auto;padding:0 16px}
+    .hero{background:#fff;padding:28px;border-radius:12px;box-shadow:0 6px 20px rgba(50,50,93,0.06);text-align:center}
+    .hero h2{margin:0;font-size:28px;color:var(--dark)}
+    .hero p{color:var(--muted);margin-top:8px}
+    .btns{display:flex;gap:12px;justify-content:center;margin-top:18px;flex-wrap:wrap}
+    .btn{background:var(--blue);color:#fff;padding:12px 18px;border-radius:10px;text-decoration:none;display:inline-block}
+    .btn.ghost{background:#e9f2ff;color:var(--blue);border:1px solid #d6eaff}
+    .section{margin-top:20px}
+    .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin-top:12px}
+    .card{background:#fff;border-radius:10px;padding:12px;box-shadow:0 4px 14px rgba(10,10,10,0.04);text-align:left}
+    .card h3{margin:6px 0;font-size:16px}
+    .card p{margin:0;color:var(--muted);font-size:13px}
+    .card .order{margin-top:10px;display:flex;gap:8px}
+    .order button{flex:1;padding:10px;border-radius:8px;border:0;background:var(--blue);color:#fff}
+    .updates{background:#fff;padding:12px;border-radius:10px;margin-top:14px}
+    .update-item{padding:10px 0;border-bottom:1px dashed #eee}
+    .update-item:last-child{border-bottom:0}
+    /* modal */
+    .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.4);z-index:50;padding:18px}
+    .modal.open{display:flex}
+    .modal-box{background:#fff;border-radius:10px;max-width:520px;width:100%;padding:16px;box-shadow:0 10px 40px rgba(2,6,23,0.2)}
+    .form-row{display:flex;gap:8px;margin-bottom:8px}
+    .form-row input,.form-row textarea,select{flex:1;padding:10px;border-radius:8px;border:1px solid #eee}
+    .close{background:#eee;border:0;padding:8px 10px;border-radius:8px}
+    footer{padding:18px;text-align:center;color:var(--muted);font-size:13px;margin-top:28px}
+    @media(max-width:520px){.hero h2{font-size:22px}}
   </style>
 </head>
 <body>
   <header>
-    <h1>Welcome to <span style="color:#007bff;">The Demand Hub</span></h1>
-    <p>🛒 তোমার নিজের eCommerce দুনিয়া — সহজে বানাও, চালাও!</p>
+    <!-- যদি logo.png আপলোড করা থাকলে এটি কাজ করবে; না থাকলে text দেখাবে -->
+    <img src="logo.png" class="logo" alt="logo" onerror="this.style.display='none'">
+    <div>
+      <h1>The Demand Hub Official</h1>
+      <p>Web Development • E-commerce</p>
+    </div>
   </header>
 
   <div class="container">
-    <h2>🚀 Website is Live</h2>
-    <p>তুমি চাইলে এখানেই নিজের প্রোডাক্ট, সার্ভিস বা ইনফো যোগ করতে পারবে!</p><a 
-  <a href="mobile/index.html" class="btn">📱 Mobile Page</a>
-<a href="food/index.html" class="btn">🍔 Food Page</a>
-<a href="home/index.html" class="btn">🏠 Home Page</a>
+    <section class="hero">
+      <h2>Welcome to <span style="color:var(--blue)">The Demand Hub</span></h2>
+      <p>তোমার নিজের eCommerce ব্যবসা — সহজে বানাও, চালাও ও বিক্রি করো।</p>
+
+      <div class="btns">
+        <a class="btn ghost" href="#categories">Home Page</a>
+        <!-- যদি একদমই কেবল Home রাখবে তাহলে অন্যগুলো রাখতে হবে না -->
+      </div>
+    </section>
+
+    <!-- Categories -->
+    <section id="categories" class="section">
+      <h3>ক্যাটাগরি গুলো</h3>
+      <div class="cards" id="category-list">
+        <!-- কাস্টমাইজ করতে তোমার প্রোডাক্ট অনুযায়ী এইগুলো বদলাবে -->
+        <div class="card">
+          <h3>Mobile</h3>
+          <p>Smartphones, accessories</p>
+          <div class="order">
+            <button onclick="filterCategory('Mobile')">View</button>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Food</h3>
+          <p>Ready-to-eat items</p>
+          <div class="order">
+            <button onclick="filterCategory('Food')">View</button>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Home</h3>
+          <p>Home appliances</p>
+          <div class="order">
+            <button onclick="filterCategory('Home')">View</button>
+          </div>
+        </div>
+        <!-- আরো category যোগ করো -->
+      </div>
+    </section>
+
+    <!-- Products -->
+    <section class="section">
+      <h3>Products</h3>
+      <div class="cards" id="product-grid">
+        <!-- sample product -->
+        <div class="card" data-cat="Mobile">
+          <h3>Simple Phone Model A</h3>
+          <p>Price: ৳3,500</p>
+          <div class="order">
+            <button onclick="openOrder('Simple Phone Model A','Mobile')">Order</button>
+          </div>
+        </div>
+
+        <div class="card" data-cat="Food">
+          <h3>Delicious Burger</h3>
+          <p>Price: ৳150</p>
+          <div class="order">
+            <button onclick="openOrder('Delicious Burger','Food')">Order</button>
+          </div>
+        </div>
+
+        <div class="card" data-cat="Home">
+          <h3>Kitchen Light</h3>
+          <p>Price: ৳600</p>
+          <div class="order">
+            <button onclick="openOrder('Kitchen Light','Home')">Order</button>
+          </div>
+        </div>
+
+        <!-- তুমি এখান আরো product copy করে যোগ করো -->
+      </div>
+    </section>
+
+    <!-- Updates -->
+    <section class="section">
+      <h3>Update Products</h3>
+      <div class="updates" id="updates">
+        <div class="update-item">
+          <strong>22 Nov 2025</strong> — নতুন: Simple Phone Model A যোগ করা হয়েছে
+        </div>
+        <div class="update-item">
+          <strong>18 Nov 2025</strong> — নতুন: Delicious Burger (Food)
+        </div>
+        <!-- আরো আপডেট যোগ করো -->
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Order Modal -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-box">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+        <strong>Place Order</strong>
+        <button class="close" onclick="closeModal()">✕</button>
+      </div>
+
+      <!-- ========================
+           FORM: এখানে FORM_ENDPOINT বদলো
+           ======================== -->
+      <form id="orderForm">
+        <input type="hidden" id="productName" name="product" />
+        <input type="hidden" id="productCat" name="category" />
+        <div class="form-row">
+          <input type="text" id="custName" name="name" placeholder="আপনার নাম" required />
+        </div>
+        <div class="form-row">
+          <input type="tel" id="custPhone" name="phone" placeholder="মোবাইল নম্বর" required />
+        </div>
+        <div class="form-row">
+          <input type="text" id="custAddress" name="address" placeholder="পূর্ণ ঠিকানা" required />
+        </div>
+        <div class="form-row">
+          <textarea id="custNote" name="note" placeholder="নোট (ঐচ্ছিক)" rows="3"></textarea>
+        </div>
+
+        <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:8px">
+          <button type="button" class="close" onclick="closeModal()">Cancel</button>
+          <button type="submit" style="background:var(--blue);color:#fff;border:0;padding:10px 14px;border-radius:8px">Submit Order</button>
+        </div>
+
+        <p id="formMsg" style="margin-top:8px;color:green;display:none">তোমার অর্ডার গ্রহণ করা হয়েছে — ধন্যবাদ!</p>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    © The Demand Hub Official — Built with GitHub Pages
+  </footer>
+
+<script>
+  // Filter by category
+  function filterCategory(cat){
+    const cards = document.querySelectorAll('#product-grid .card');
+    cards.forEach(c=>{
+      c.style.display = (c.dataset.cat===cat || cat==='All') ? 'block' : 'none';
+    });
+    window.scrollTo({top:document.getElementById('product-grid').offsetTop - 60, behavior:'smooth'});
+  }
+
+  // Open order modal prefill product
+  function openOrder(product, cat){
+    document.getElementById('productName').value = product;
+    document.getElementById('productCat').value = cat;
+    document.getElementById('custName').value = '';
+    document.getElementById('custPhone').value = '';
+    document.getElementById('custAddress').value = '';
+    document.getElementById('custNote').value = '';
+    document.getElementById('formMsg').style.display='none';
+    document.getElementById('modal').classList.add('open');
+    document.getElementById('modal').setAttribute('aria-hidden','false');
+  }
+  function closeModal(){
+    document.getElementById('modal').classList.remove('open');
+    document.getElementById('modal').setAttribute('aria-hidden','true');
+  }
+
+  // FORM handling:
+  // DEFAULT behavior: local confirmation (simulate)
+  // If you want real email/storage, set FORM_ENDPOINT (Formspree) below and uncomment fetch code
+  const FORM_ENDPOINT = ""; // <-- **এখানে Formspree URL বসাও** (https://formspree.io/f/your-id)
+
+  document.getElementById('orderForm').addEventListener('submit', async function(e){
+    e.preventDefault();
+    const data = {
+      product: document.getElementById('productName').value,
+      category: document.getElementById('productCat').value,
+      name: document.getElementById('custName').value,
+      phone: document.getElementById('custPhone').value,
+      address: document.getElementById('custAddress').value,
+      note: document.getElementById('custNote').value,
+      time: new Date().toLocaleString()
+    };
+
+    if(FORM_ENDPOINT && FORM_ENDPOINT.startsWith('https')){
+      // send to Formspree (uncomment to enable - make sure FORM_ENDPOINT set)
+      try {
+        const res = await fetch(FORM_ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+        if(res.ok){
+          document.getElementById('formMsg').textContent = 'তোমার অর্ডার গ্রহণ করা হয়েছে — আমরা শীঘ্রই যোগাযোগ করবো!';
+          document.getElementById('formMsg').style.display='block';
+          setTimeout(()=> closeModal(), 2200);
+        } else {
+          alert('Submission failed, try again.');
+        }
+      } catch(err){
+        alert('Network error. Try again.');
+      }
+    } else {
+      // Local simulate: show confirmation & save to localStorage for now
+      const orders = JSON.parse(localStorage.getItem('tdh_orders'||'[]')) || [];
+      orders.push(data);
+      localStorage.setItem('tdh_orders', JSON.stringify(orders));
+      document.getElementById('formMsg').textContent = 'অর্ডার স্থানান্তর করা হয়েছে (Local demo). আমরা শীঘ্রই যোগাযোগ করবো!';
+      document.getElementById('formMsg').style.display='block';
+      setTimeout(()=> closeModal(), 1800);
+      console.log('Saved order (local):', data);
+    }
+  });
+
+  // On load: show all cards
+  document.addEventListener('DOMContentLoaded', ()=>{
+    filterCategory('All');
+  });
+</script>
+</body>
+</html>
