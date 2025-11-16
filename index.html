@@ -123,141 +123,26 @@
       </div>
     </section>
 
-    <!-- Updates -->
-    <section class="section">
-      <h3>Update Products</h3>
-      <div class="updates" id="updates">
-        <div class="update-item">
-          <strong>22 Nov 2025</strong> — নতুন: Simple Phone Model A যোগ করা হয়েছে
-        </div>
-        <div class="update-item">
-          <strong>18 Nov 2025</strong> — নতুন: Delicious Burger (Food)
-        </div>
-        <!-- আরো আপডেট যোগ করো -->
-      </div>
-    </section>
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Demand Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-  </div>
+    <header class="header">
+        <div class="logo">🔥 THE DEMAND HUB</div>
+    </header>
 
-  <!-- Order Modal -->
-  <div id="modal" class="modal" aria-hidden="true">
-    <div class="modal-box">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
-        <strong>Place Order</strong>
-        <button class="close" onclick="closeModal()">✕</button>
-      </div>
-
-      <!-- ========================
-           FORM: এখানে FORM_ENDPOINT বদলো
-           ======================== -->
-      <form id="orderForm">
-        <input type="hidden" id="productName" name="product" />
-        <input type="hidden" id="productCat" name="category" />
-        <div class="form-row">
-          <input type="text" id="custName" name="name" placeholder="আপনার নাম" required />
-        </div>
-        <div class="form-row">
-          <input type="tel" id="custPhone" name="phone" placeholder="মোবাইল নম্বর" required />
-        </div>
-        <div class="form-row">
-          <input type="text" id="custAddress" name="address" placeholder="পূর্ণ ঠিকানা" required />
-        </div>
-        <div class="form-row">
-          <textarea id="custNote" name="note" placeholder="নোট (ঐচ্ছিক)" rows="3"></textarea>
-        </div>
-
-        <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:8px">
-          <button type="button" class="close" onclick="closeModal()">Cancel</button>
-          <button type="submit" style="background:var(--blue);color:#fff;border:0;padding:10px 14px;border-radius:8px">Submit Order</button>
-        </div>
-
-        <p id="formMsg" style="margin-top:8px;color:green;display:none">তোমার অর্ডার গ্রহণ করা হয়েছে — ধন্যবাদ!</p>
-      </form>
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search">
     </div>
-  </div>
 
-  <footer>
-    © The Demand Hub Official — Built with GitHub Pages
-  </footer>
+    <div class="product-container" id="productList"></div>
 
-<script>
-  // Filter by category
-  function filterCategory(cat){
-    const cards = document.querySelectorAll('#product-grid .card');
-    cards.forEach(c=>{
-      c.style.display = (c.dataset.cat===cat || cat==='All') ? 'block' : 'none';
-    });
-    window.scrollTo({top:document.getElementById('product-grid').offsetTop - 60, behavior:'smooth'});
-  }
-
-  // Open order modal prefill product
-  function openOrder(product, cat){
-    document.getElementById('productName').value = product;
-    document.getElementById('productCat').value = cat;
-    document.getElementById('custName').value = '';
-    document.getElementById('custPhone').value = '';
-    document.getElementById('custAddress').value = '';
-    document.getElementById('custNote').value = '';
-    document.getElementById('formMsg').style.display='none';
-    document.getElementById('modal').classList.add('open');
-    document.getElementById('modal').setAttribute('aria-hidden','false');
-  }
-  function closeModal(){
-    document.getElementById('modal').classList.remove('open');
-    document.getElementById('modal').setAttribute('aria-hidden','true');
-  }
-
-  // FORM handling:
-  // DEFAULT behavior: local confirmation (simulate)
-  // If you want real email/storage, set FORM_ENDPOINT (Formspree) below and uncomment fetch code
-  const FORM_ENDPOINT = ""; // <-- **এখানে Formspree URL বসাও** (https://formspree.io/f/your-id)
-
-  document.getElementById('orderForm').addEventListener('submit', async function(e){
-    e.preventDefault();
-    const data = {
-      product: document.getElementById('productName').value,
-      category: document.getElementById('productCat').value,
-      name: document.getElementById('custName').value,
-      phone: document.getElementById('custPhone').value,
-      address: document.getElementById('custAddress').value,
-      note: document.getElementById('custNote').value,
-      time: new Date().toLocaleString()
-    };
-
-    if(FORM_ENDPOINT && FORM_ENDPOINT.startsWith('https')){
-      // send to Formspree (uncomment to enable - make sure FORM_ENDPOINT set)
-      try {
-        const res = await fetch(FORM_ENDPOINT, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(data)
-        });
-        if(res.ok){
-          document.getElementById('formMsg').textContent = 'তোমার অর্ডার গ্রহণ করা হয়েছে — আমরা শীঘ্রই যোগাযোগ করবো!';
-          document.getElementById('formMsg').style.display='block';
-          setTimeout(()=> closeModal(), 2200);
-        } else {
-          alert('Submission failed, try again.');
-        }
-      } catch(err){
-        alert('Network error. Try again.');
-      }
-    } else {
-      // Local simulate: show confirmation & save to localStorage for now
-      const orders = JSON.parse(localStorage.getItem('tdh_orders'||'[]')) || [];
-      orders.push(data);
-      localStorage.setItem('tdh_orders', JSON.stringify(orders));
-      document.getElementById('formMsg').textContent = 'অর্ডার স্থানান্তর করা হয়েছে (Local demo). আমরা শীঘ্রই যোগাযোগ করবো!';
-      document.getElementById('formMsg').style.display='block';
-      setTimeout(()=> closeModal(), 1800);
-      console.log('Saved order (local):', data);
-    }
-  });
-
-  // On load: show all cards
-  document.addEventListener('DOMContentLoaded', ()=>{
-    filterCategory('All');
-  });
-</script>
+    <script src="script.js"></script>
 </body>
 </html>
